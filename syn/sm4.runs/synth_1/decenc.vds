@@ -1,0 +1,609 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Jan 28 21:55:02 2021
+# Process ID: 15336
+# Current directory: E:/SM4-FPGA/syn/sm4.runs/synth_1
+# Command line: vivado.exe -log decenc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source decenc.tcl
+# Log file: E:/SM4-FPGA/syn/sm4.runs/synth_1/decenc.vds
+# Journal file: E:/SM4-FPGA/syn/sm4.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source decenc.tcl -notrace
+Command: synth_design -top decenc -part xc7z010clg400-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 18464 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 700.082 ; gain = 239.348
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'decenc' [E:/SM4-FPGA/rtl/decenc.v:2]
+INFO: [Synth 8-6157] synthesizing module 'sbox_32b' [E:/SM4-FPGA/rtl/sbox_32b.v:2]
+INFO: [Synth 8-6157] synthesizing module 'sbox_8b' [E:/SM4-FPGA/rtl/sbox_8b.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'sbox_8b' (1#1) [E:/SM4-FPGA/rtl/sbox_8b.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'sbox_32b' (2#1) [E:/SM4-FPGA/rtl/sbox_32b.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'decenc' (3#1) [E:/SM4-FPGA/rtl/decenc.v:2]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 772.977 ; gain = 312.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 772.977 ; gain = 312.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 772.977 ; gain = 312.242
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-3
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 772.977 ; gain = 312.242
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   6 Input     32 Bit         XORs := 32    
+	   4 Input     32 Bit         XORs := 30    
+	   2 Input     32 Bit         XORs := 1     
+	   3 Input     32 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 33    
+	                8 Bit    Registers := 128   
++---ROMs : 
+	                              ROMs := 128   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module decenc 
+Detailed RTL Component Info : 
++---XORs : 
+	   6 Input     32 Bit         XORs := 32    
+	   4 Input     32 Bit         XORs := 30    
+	   2 Input     32 Bit         XORs := 1     
+	   3 Input     32 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 33    
+Module sbox_8b 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1062.480 ; gain = 601.746
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5835] Resources of type BRAM have been overutilized. Used = 128, Available = 120. Will try to implement using LUT-RAM. 
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+--------------------------------+---------------+----------------+
+|Module Name | RTL Object                     | Depth x Width | Implemented As | 
++------------+--------------------------------+---------------+----------------+
+|decenc      | genblk1[0].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[0].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[0].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[0].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[1].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[1].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[1].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[1].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[2].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[2].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[2].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[2].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[3].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[3].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[3].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[3].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[4].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[4].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[4].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[4].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[5].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[5].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[5].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[5].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[6].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[6].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[6].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[6].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[7].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[7].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[7].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[7].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[8].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[8].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[8].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[8].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[9].SBOX/SBOX1/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[9].SBOX/SBOX2/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[9].SBOX/SBOX3/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[9].SBOX/SBOX4/Y_o_reg  | 256x8         | Block RAM      | 
+|decenc      | genblk1[10].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[10].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[10].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[10].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[11].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[11].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[11].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[11].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[12].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[12].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[12].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[12].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[13].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[13].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[13].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[13].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[14].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[14].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[14].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[14].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[15].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[15].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[15].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[15].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[16].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[16].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[16].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[16].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[17].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[17].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[17].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[17].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[18].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[18].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[18].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[18].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[19].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[19].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[19].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[19].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[20].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[20].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[20].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[20].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[21].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[21].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[21].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[21].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[22].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[22].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[22].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[22].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[23].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[23].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[23].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[23].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[24].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[24].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[24].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[24].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[25].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[25].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[25].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[25].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[26].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[26].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[26].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[26].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[27].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[27].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[27].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[27].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[28].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[28].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[28].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[28].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[29].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[29].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[29].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[29].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[30].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[30].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[30].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[30].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[31].SBOX/SBOX1/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[31].SBOX/SBOX2/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[31].SBOX/SBOX3/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[31].SBOX/SBOX4/Y_o_reg | 256x8         | Block RAM      | 
+|decenc      | genblk1[0].SBOX/SBOX1/Y_o      | 256x8         | LUT            | 
+|decenc      | genblk1[0].SBOX/SBOX2/Y_o      | 256x8         | LUT            | 
+|decenc      | genblk1[0].SBOX/SBOX3/Y_o      | 256x8         | LUT            | 
+|decenc      | genblk1[0].SBOX/SBOX4/Y_o      | 256x8         | LUT            | 
+|decenc      | genblk1[1].SBOX/SBOX1/Y_o      | 256x8         | LUT            | 
+|decenc      | genblk1[1].SBOX/SBOX2/Y_o      | 256x8         | LUT            | 
+|decenc      | genblk1[1].SBOX/SBOX3/Y_o      | 256x8         | LUT            | 
+|decenc      | genblk1[1].SBOX/SBOX4/Y_o      | 256x8         | LUT            | 
++------------+--------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7053] The timing for the instance genblk1[2].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[2].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[2].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[2].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[3].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[3].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[3].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[3].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[4].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[4].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[4].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[4].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[5].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[5].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[5].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[5].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[6].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[6].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[6].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[6].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[7].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[7].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[7].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[7].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[8].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[8].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[8].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[8].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[9].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[9].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[9].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[9].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[10].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[10].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[10].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[10].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[11].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[11].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[11].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[11].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[12].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[12].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[12].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[12].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[13].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[13].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[13].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[13].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[14].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[14].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[14].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[14].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[15].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[15].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[15].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[15].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[16].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[16].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[16].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[16].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[17].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[17].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[17].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[17].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[18].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[18].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[18].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[18].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[19].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[19].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[19].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[19].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[20].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[20].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[20].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[20].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[21].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[21].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[21].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[21].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[22].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[22].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[22].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[22].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[23].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[23].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[23].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[23].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[24].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[24].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[24].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[24].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[25].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[25].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[25].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[25].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[26].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[26].SBOX/SBOX1/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[26].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance genblk1[26].SBOX/SBOX3/Y_o_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Common 17-14] Message 'Synth 8-7053' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |LUT1     |     1|
+|3     |LUT4     |  1024|
+|4     |LUT6     |  1280|
+|5     |MUXF7    |   128|
+|6     |MUXF8    |    64|
+|7     |RAMB18E1 |    60|
+|8     |FDCE     |  1056|
+|9     |FDRE     |    64|
+|10    |IBUF     |  1155|
+|11    |OBUF     |   129|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------------+------------+------+
+|      |Instance             |Module      |Cells |
++------+---------------------+------------+------+
+|1     |top                  |            |  4962|
+|2     |  \genblk1[0].SBOX   |sbox_32b    |   512|
+|3     |    SBOX1            |sbox_8b_94  |   128|
+|4     |    SBOX2            |sbox_8b_95  |   128|
+|5     |    SBOX3            |sbox_8b_96  |   128|
+|6     |    SBOX4            |sbox_8b_97  |   128|
+|7     |  \genblk1[10].SBOX  |sbox_32b_0  |    66|
+|8     |    SBOX1            |sbox_8b_92  |    33|
+|9     |    SBOX3            |sbox_8b_93  |    33|
+|10    |  \genblk1[11].SBOX  |sbox_32b_1  |    66|
+|11    |    SBOX1            |sbox_8b_90  |    33|
+|12    |    SBOX3            |sbox_8b_91  |    33|
+|13    |  \genblk1[12].SBOX  |sbox_32b_2  |    66|
+|14    |    SBOX1            |sbox_8b_88  |    33|
+|15    |    SBOX3            |sbox_8b_89  |    33|
+|16    |  \genblk1[13].SBOX  |sbox_32b_3  |    66|
+|17    |    SBOX1            |sbox_8b_86  |    33|
+|18    |    SBOX3            |sbox_8b_87  |    33|
+|19    |  \genblk1[14].SBOX  |sbox_32b_4  |    66|
+|20    |    SBOX1            |sbox_8b_84  |    33|
+|21    |    SBOX3            |sbox_8b_85  |    33|
+|22    |  \genblk1[15].SBOX  |sbox_32b_5  |    66|
+|23    |    SBOX1            |sbox_8b_82  |    33|
+|24    |    SBOX3            |sbox_8b_83  |    33|
+|25    |  \genblk1[16].SBOX  |sbox_32b_6  |    98|
+|26    |    SBOX1            |sbox_8b_80  |    49|
+|27    |    SBOX3            |sbox_8b_81  |    49|
+|28    |  \genblk1[17].SBOX  |sbox_32b_7  |    66|
+|29    |    SBOX1            |sbox_8b_78  |    33|
+|30    |    SBOX3            |sbox_8b_79  |    33|
+|31    |  \genblk1[18].SBOX  |sbox_32b_8  |    34|
+|32    |    SBOX1            |sbox_8b_76  |    17|
+|33    |    SBOX3            |sbox_8b_77  |    17|
+|34    |  \genblk1[19].SBOX  |sbox_32b_9  |    98|
+|35    |    SBOX1            |sbox_8b_74  |    49|
+|36    |    SBOX3            |sbox_8b_75  |    49|
+|37    |  \genblk1[1].SBOX   |sbox_32b_10 |   192|
+|38    |    SBOX1            |sbox_8b_70  |    48|
+|39    |    SBOX2            |sbox_8b_71  |    48|
+|40    |    SBOX3            |sbox_8b_72  |    48|
+|41    |    SBOX4            |sbox_8b_73  |    48|
+|42    |  \genblk1[20].SBOX  |sbox_32b_11 |    66|
+|43    |    SBOX1            |sbox_8b_68  |    33|
+|44    |    SBOX3            |sbox_8b_69  |    33|
+|45    |  \genblk1[21].SBOX  |sbox_32b_12 |    34|
+|46    |    SBOX1            |sbox_8b_66  |    17|
+|47    |    SBOX3            |sbox_8b_67  |    17|
+|48    |  \genblk1[22].SBOX  |sbox_32b_13 |    66|
+|49    |    SBOX1            |sbox_8b_64  |    33|
+|50    |    SBOX3            |sbox_8b_65  |    33|
+|51    |  \genblk1[23].SBOX  |sbox_32b_14 |    66|
+|52    |    SBOX1            |sbox_8b_62  |    33|
+|53    |    SBOX3            |sbox_8b_63  |    33|
+|54    |  \genblk1[24].SBOX  |sbox_32b_15 |    66|
+|55    |    SBOX1            |sbox_8b_60  |    33|
+|56    |    SBOX3            |sbox_8b_61  |    33|
+|57    |  \genblk1[25].SBOX  |sbox_32b_16 |    66|
+|58    |    SBOX1            |sbox_8b_58  |    33|
+|59    |    SBOX3            |sbox_8b_59  |    33|
+|60    |  \genblk1[26].SBOX  |sbox_32b_17 |    98|
+|61    |    SBOX1            |sbox_8b_56  |    49|
+|62    |    SBOX3            |sbox_8b_57  |    49|
+|63    |  \genblk1[27].SBOX  |sbox_32b_18 |    66|
+|64    |    SBOX1            |sbox_8b_54  |    33|
+|65    |    SBOX3            |sbox_8b_55  |    33|
+|66    |  \genblk1[28].SBOX  |sbox_32b_19 |    66|
+|67    |    SBOX1            |sbox_8b_52  |    33|
+|68    |    SBOX3            |sbox_8b_53  |    33|
+|69    |  \genblk1[29].SBOX  |sbox_32b_20 |    66|
+|70    |    SBOX1            |sbox_8b_50  |    33|
+|71    |    SBOX3            |sbox_8b_51  |    33|
+|72    |  \genblk1[2].SBOX   |sbox_32b_21 |    34|
+|73    |    SBOX1            |sbox_8b_48  |    17|
+|74    |    SBOX3            |sbox_8b_49  |    17|
+|75    |  \genblk1[30].SBOX  |sbox_32b_22 |    34|
+|76    |    SBOX1            |sbox_8b_46  |    17|
+|77    |    SBOX3            |sbox_8b_47  |    17|
+|78    |  \genblk1[31].SBOX  |sbox_32b_23 |    34|
+|79    |    SBOX1            |sbox_8b_44  |    17|
+|80    |    SBOX3            |sbox_8b_45  |    17|
+|81    |  \genblk1[3].SBOX   |sbox_32b_24 |    98|
+|82    |    SBOX1            |sbox_8b_42  |    49|
+|83    |    SBOX3            |sbox_8b_43  |    49|
+|84    |  \genblk1[4].SBOX   |sbox_32b_25 |    66|
+|85    |    SBOX1            |sbox_8b_40  |    33|
+|86    |    SBOX3            |sbox_8b_41  |    33|
+|87    |  \genblk1[5].SBOX   |sbox_32b_26 |    34|
+|88    |    SBOX1            |sbox_8b_38  |    17|
+|89    |    SBOX3            |sbox_8b_39  |    17|
+|90    |  \genblk1[6].SBOX   |sbox_32b_27 |    66|
+|91    |    SBOX1            |sbox_8b_36  |    33|
+|92    |    SBOX3            |sbox_8b_37  |    33|
+|93    |  \genblk1[7].SBOX   |sbox_32b_28 |    66|
+|94    |    SBOX1            |sbox_8b_34  |    33|
+|95    |    SBOX3            |sbox_8b_35  |    33|
+|96    |  \genblk1[8].SBOX   |sbox_32b_29 |    66|
+|97    |    SBOX1            |sbox_8b_32  |    33|
+|98    |    SBOX3            |sbox_8b_33  |    33|
+|99    |  \genblk1[9].SBOX   |sbox_32b_30 |    66|
+|100   |    SBOX1            |sbox_8b     |    33|
+|101   |    SBOX3            |sbox_8b_31  |    33|
++------+---------------------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1090.180 ; gain = 629.445
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.199 . Memory (MB): peak = 1090.180 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 252 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1098.480 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+116 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:54 . Memory (MB): peak = 1098.480 ; gain = 661.605
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1098.480 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/SM4-FPGA/syn/sm4.runs/synth_1/decenc.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file decenc_utilization_synth.rpt -pb decenc_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 28 21:56:07 2021...
