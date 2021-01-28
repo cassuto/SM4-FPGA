@@ -41,13 +41,13 @@ const uint32_t SBOX[] = {
 };
 
 inline uint32_t btw(const uint8_t *b) {
-    return ( uint32_t(b[3])<<24 | uint32_t(b[2])<<16 | uint32_t(b[1])<<8 | uint32_t(b[0]) );
+    return ( uint32_t(b[0])<<24 | uint32_t(b[1])<<16 | uint32_t(b[2])<<8 | uint32_t(b[3]) );
 }
 inline void wtb(uint32_t w, uint8_t *b) {
-    b[3] = w>>24;
-    b[2] = w>>16;
-    b[1] = w>>8;
-    b[0] = w & 0xFF;
+    b[0] = w>>24;
+    b[1] = w>>16;
+    b[2] = w>>8;
+    b[3] = w & 0xFF;
 }
 
 /* Rotate left */
@@ -106,6 +106,16 @@ void decenc(bool enc, const uint8_t *in, uint8_t *out, uint32_t K[36]) {
     wtb(X[32], out+12);
 }
 
+/* Debugging staffs */
+template <typename T>
+    void dump_hex(const char *msg, const T *dat, size_t n) {
+        cout<<msg;
+        for(int i=0;i<n;++i) {
+            cout<<hex<<uint32_t(dat[i])<<" ";
+        }
+        cout<<endl;
+    }
+
 int main() {
     const uint8_t mk[16] = {0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF, 0xFE, 0xDC, 0xBA, 0x98, 0x76, 0x54, 0x32, 0x10};
     uint8_t dat[16] = {0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF, 0xFE, 0xDC, 0xBA, 0x98, 0x76, 0x54, 0x32, 0x10};
@@ -113,24 +123,21 @@ int main() {
     uint32_t K[36];
     uint8_t out[16];
     
-    /* Test encryption */
+    /* Test key expanding */
     keyexpand(mk, K);
+    
+    dump_hex("K = ", K, 36);
+    
+    /* Test encryption */
     decenc(true, dat, out, K);
     
-    for(int i=0;i<16;++i) {
-        cout<<hex<<int(out[i])<<" ";
-    }
-    cout<<endl;
+    dump_hex("ENC = ", out, 16);
     
     /* Test decrypt */
     memset(dat, 0, sizeof(dat));
-    keyexpand(mk, K);
     decenc(false, out, dat, K);
     
-    for(int i=0;i<16;++i) {
-        cout<<hex<<int(dat[i])<<" ";
-    }
-    cout<<endl;
+    dump_hex("DEC = ", dat, 16);
     
     return 0;
 }
