@@ -1,0 +1,36 @@
+E:/SM4-FPGA/testbench/tb_keyexp.v {1 {vlog -work work E:/SM4-FPGA/testbench/tb_keyexp.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb_keyexp
+
+Top level modules:
+	tb_keyexp
+
+} {} {}} E:/SM4-FPGA/rtl/sbox_8b.v {1 {vlog -work work E:/SM4-FPGA/rtl/sbox_8b.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sbox_8b
+
+Top level modules:
+	sbox_8b
+
+} {} {}} E:/SM4-FPGA/rtl/decenc.v {1 {vlog -work work E:/SM4-FPGA/rtl/decenc.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module decenc
+
+Top level modules:
+	decenc
+
+} {} {}} E:/SM4-FPGA/rtl/keyexp.v {1 {vlog -work work E:/SM4-FPGA/rtl/keyexp.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module keyexp
+
+Top level modules:
+	keyexp
+
+} {} {}} E:/SM4-FPGA/rtl/sbox_32b.v {1 {vlog -work work E:/SM4-FPGA/rtl/sbox_32b.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sbox_32b
+
+Top level modules:
+	sbox_32b
+
+} {} {}}
