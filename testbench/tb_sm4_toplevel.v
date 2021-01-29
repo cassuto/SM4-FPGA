@@ -72,4 +72,8 @@ module tb_sm4_toplevel;
       else
          $display("Testing...");
    
+   always @(posedge clk)
+      if (ciphertext_valid && ciphertext != 128'h681edf34d206965e86b3e94f536e4246)
+         $fatal("Error output of ENCRYPTOR");
+   
 endmodule
