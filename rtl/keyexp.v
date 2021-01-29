@@ -82,7 +82,7 @@ always @(posedge CLK_i or negedge RST_N_i)
    else
       begin
          ready[0] <= MK_VALID_i;
-         ready[31:1] <= ready[31:0];
+         ready[31:1] <= ready[30:0];
       end
 
 assign RK_READY_o = ready[31];
