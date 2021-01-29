@@ -39,7 +39,7 @@ module tb_decenc;
       if (DAT_READY)
          begin
             if (DAT_o != 128'h681edf34d206965e86b3e94f536e4246)
-               $fatal("Error output of RK");
+               $fatal("Error output of DAT");
             else
                $display("Succeeded !");
          end
