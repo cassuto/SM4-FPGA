@@ -40,7 +40,7 @@ generate
          reg [31:0] k_ff;
          
          /* Input of transformation function T'(X) */
-         assign x = K[i+1] ^ K[i+2] ^ K[i+3] ^ CK[i];
+         assign x = (K[i+1] ^ K[i+2]) ^ (K[i+3] ^ CK[i]);
          
          sbox_32b SBOX(
             .CLK_i   (CLK_i),

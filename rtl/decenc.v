@@ -29,7 +29,7 @@ generate
          reg [31:0] x_ff;
          
          /* Input of transformation function T(X) */
-         assign a = X[i+1] ^ X[i+2] ^ X[i+3] ^ RK_i[32*(31-i+1)-1:32*(31-i)];
+         assign a = (X[i+1] ^ X[i+2]) ^ (X[i+3] ^ RK_i[32*(31-i+1)-1:32*(31-i)]);
          
          sbox_32b SBOX(
             .CLK_i   (CLK_i),
@@ -38,7 +38,7 @@ generate
          );
          
          /* Linear transformation */
-         wire [31:0] t = b ^ {b[29:0],b[31:30]} ^ {b[21:0],b[31:22]} ^ {b[13:0],b[31:14]} ^ {b[7:0],b[31:8]};
+         wire [31:0] t = (b ^ {b[29:0],b[31:30]}) ^ ({b[21:0],b[31:22]} ^ {b[13:0],b[31:14]}) ^ {b[7:0],b[31:8]};
          
          /* Pipeline stage i */
          always @(posedge CLK_i or negedge RST_N_i)
