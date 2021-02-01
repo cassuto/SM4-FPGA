@@ -1,6 +1,6 @@
 
 module sm4_toplevel #(
-   parameter MODE = 0, /* 0: Encryptor, 1(or otherwise): Decryptor */
+   parameter MODE = 0, /* 0: Encryptor, 1(>0): Decryptor */
    parameter ENABLE_FIXED_RK = 0,
    parameter [1023:0] FIXED_RK = 1024'h0
 )
